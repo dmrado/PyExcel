@@ -57,7 +57,11 @@ users = {
 
 def print_users(users):
     for i in users:
-        print('id:', i, '\tname:', users[i].get('username', "User has not a name"))
+        id = i
+        name = users[i].get("username", "user has no name")
+        index = users[i].get("address", {}).get("index", "user has no index")
+        address = users[i].get("address", "user has no address")
+        print('id:', id, '\tname:', name, '\tindex', index,  '\taddress', address)
 
 
 def get_address_by_user_id(users, id):
